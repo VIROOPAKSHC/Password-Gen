@@ -97,21 +97,23 @@ def get_input():
         print("Enter an option from the given")
         return get_input()
 
-
-while True:
-    chars = '!@_#$%^&*()~|'
-    nums = '0123456789'
-    alphabets = 'abcdefghijklmopqrstuvwxyz'
-    upperalpha = alphabets.upper()
-    choice = manage_type()
-    min_len = get_length()
-    password = generate_password(choice, min_len, chars, nums, alphabets, upperalpha)
-    print('Your password:', password)
-    inconvenience = int(input('Do you have any inconvenience with password:\n\t1)Yes\n\t2)No\n'))
-    if inconvenience == 1:
-        new_password = check_inconvenience(password, choice, min_len, chars, nums, alphabets, upperalpha)
-        print('Your new password:', new_password)
-    s = get_input()
-    if s == 2:
-        print('Thank you for using our password generator!! Hope you are satisfied!')
-        break
+def main():
+    while True:
+        chars = '!@_#$%^&*()~|'
+        nums = '0123456789'
+        alphabets = 'abcdefghijklmopqrstuvwxyz'
+        upperalpha = alphabets.upper()
+        choice = manage_type()
+        min_len = get_length()
+        password = generate_password(choice, min_len, chars, nums, alphabets, upperalpha)
+        print('Your password:', password)
+        inconvenience = int(input('Do you have any inconvenience with password:\n\t1)Yes\n\t2)No\n'))
+        if inconvenience == 1:
+            new_password = check_inconvenience(password, choice, min_len, chars, nums, alphabets, upperalpha)
+            print('Your new password:', new_password)
+        s = get_input()
+        if s == 2:
+            print('Thank you for using our password generator!! Hope you are satisfied!')
+            break
+if __name__=="__main__":
+    main()
